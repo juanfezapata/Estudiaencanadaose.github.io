@@ -7295,7 +7295,7 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.4;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: 400; }
 
 .text-primary {
@@ -9409,7 +9409,7 @@ textarea.form-control {
     height: 20em;
     position: relative;
     overflow: hidden;
-    flex: 0 0 14em;
+    flex: 5 5 14em; <!-- changes sizes of images -->
     margin-bottom: 1em;
 }
 .poop img {
