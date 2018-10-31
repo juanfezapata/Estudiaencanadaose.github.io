@@ -7295,7 +7295,7 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.4;
-  color: #1b212c;
+  color: #000000;
   font-weight: 400; }
 
 .text-primary {
@@ -7493,7 +7493,7 @@ h1, h2, h3, h4, h5,
 
 .slider-text {
   color: #fff;
-  height: 600px; }
+  height: 100px; }
   .slider-text h1 {
     font-size: 60px;
     color: #fff;
@@ -9395,3 +9395,24 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+.poo
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.poop
+{
+    cursor: pointer;
+    height: 20em;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 14em;
+    margin-bottom: 1em;
+}
+.poop img {
+  max-width: 100%;
+  max-height: 100%;
+}
