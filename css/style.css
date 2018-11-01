@@ -9409,7 +9409,7 @@ textarea.form-control {
     height: 20em;
     position: relative;
     overflow: hidden;
-    flex: 5 5 14em; <!-- changes sizes of images -->
+    flex: 15 15 30em; <!-- changes sizes of images -->
     margin-bottom: 1em;
 }
 .poop img {
