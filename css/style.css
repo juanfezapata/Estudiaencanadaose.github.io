@@ -9405,10 +9405,10 @@ textarea.form-control {
 .poop
 {
     cursor: pointer;
-    height: 20em;
+    height: 10em;
     position: relative;
     overflow: hidden;
-    flex: 15 15 30em; <!-- changes sizes of images -->
+    flex: 30em; <!-- changes sizes of images -->
     margin-bottom: 1em;
 }
 .poop img {
