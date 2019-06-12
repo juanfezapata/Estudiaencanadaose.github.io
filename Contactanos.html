@@ -26,6 +26,21 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+
+
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Spectral">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+      body {
+        font-family: 'Roboto', serif;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -69,43 +84,90 @@
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
           <div class="col-md-12 mb-4">
-            <h2 class="mb-4" style="color: #006DFF">Información de Contacto</h2>
+             <h2 class="h4" style="color: #ADDEDA">Información de Contacto</h2>
           </div>
+            <style>
+            h1 {
+             font-size: 15px;
+              }
+            </style>
+
           <div class="w-100"></div>
           <div class="col-md-3">
-            <p><span>WhatsApp:</span> <a href="tel://1234567920">+1 226 749 1707</a></p>
+
+
+              <h1><div style="font-family: 'Spectral', serif;"> <span class="icon icon-map-marker"> </span> Kitchener, ON, Canadá </div> </h1>
+
           </div>
           <div class="col-md-3">
-            <p><span>Email:</span> <a href="mailto:info@yoursite.com">orangeskyen@gmail.com</a></p>
+
+
+               <h1><div style="font-family: 'Spectral', serif;"> <span class="icon icon-phone"> </span> WhatsApp: +1 226 749 1707 </div> </h1>
+
+         
           </div>
+          <div class="col-md-3">
+
+               <h1><div style="font-family: 'Spectral', serif;"> <span class="icon icon-envelope"> </span> orangeskyen@gmail.com </div> </h1>
+
+          </div>
+
         </div>
-        <!--
+
         <div class="row block-9">
           <div class="col-md-6 pr-md-5">
-          	<h4 class="mb-4">Tienes una pregunta?</h4>
-            <form action="#">
+            <h4 class="mb-4" style="color: #ADDEDA">Tienes una pregunta?</h4>
+             <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+              action="https://script.google.com/macros/s/AKfycbxquPuJa5lE9zlrNcDUKhULrwjVabno2ZWSl-7NlAiERVnyPxYa/exec">
+                <!-- change the form action to your script url -->
+
+
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tu Nombre">
+                <textarea name="name" class="form-control" placeholder="Nombre"></textarea>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tu Email">
+                 <textarea name="email" class="form-control" placeholder="Email"></textarea>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tema">
+                 <textarea name="tema" class="form-control" placeholder="Tema"></textarea>
+                
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Mensaje"></textarea>
+                <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Mensaje"></textarea>
               </div>
+
+              <!--
+              <fieldset class="pure-group honeypot-field">
+                <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                <input id="honeypot" type="text" name="honeypot" value="" />
+                </fieldset>
+                -->
+
               
               <div class="form-group">
                 <input type="submit" value="Mandar Mensaje" class="btn btn-primary py-3 px-5">
               </div>
+
+
+               <!-- Submit the Form to Google Using "AJAX" -->
+                <script data-cfasync="false" src="form-submission-handler.js"></script>
+              <!-- END -->
+
+              <div style="display:none" class="thankyou_message">
+              <!-- You can customize the thankyou message by editing the code below -->
+               <h2 class="col-md-10 text-center" style="color: #F17126">¡Gracias por contactarnos. Te contactaremos pronto! 
+               </h2>
+              </div>
+
             </form>
           </div>
-          <div class="col-md-6" id="map"></div>
-          -->
-        </div>
-      </div>
+
+
+          <div class="col-md-6" class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=1180%20countrystone%20drive&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
+
+
+            </div>
 
     </section>
     
