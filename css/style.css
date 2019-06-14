@@ -7573,7 +7573,7 @@ h1, h2, h3, h4, h5,
       height: 10px;
       margin: 5px;
       border-radius: 50%;
-      background: #adb8cc;
+      background: #C9E0CA;
       position: relative; }
       .owl-carousel .owl-dots .owl-dot:after {
         position: absolute;
@@ -7590,7 +7590,7 @@ h1, h2, h3, h4, h5,
         -ms-border-radius: 50%;
         border-radius: 50%; }
       .owl-carousel .owl-dots .owl-dot.active {
-        background: #55688b; }
+        background: #ADDEDA; }
   .owl-carousel:hover .owl-nav .owl-prev,
   .owl-carousel:hover .owl-nav .owl-next {
     opacity: 1; }
