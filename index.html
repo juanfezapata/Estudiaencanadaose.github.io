@@ -152,7 +152,7 @@
           <div class="col-md-7 heading-section text-center">
             <h2 class="mb-4" style="color: #F17126">Testimonios</h2>
 
-            <div id="videoCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div id="videoCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
              <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="embed-responsive embed-responsive-16by9">
@@ -223,9 +223,10 @@ function onPlayerStateChange(event) {
 }
 
 $(document).ready(function() {
-    $('#videoCarousel').carousel();
+  $('#videoCarousel').carousel({
+    interval: false
+  });
 });
-
 // Asynchronously load the YouTube IFrame API
 // After the API code downloads, it will call the function specified using the 'onload' parameter
 var tag = document.createElement('script');
