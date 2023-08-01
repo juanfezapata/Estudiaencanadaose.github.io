@@ -199,96 +199,31 @@
     <!-- Add more videos as needed -->
 
 <script>
-var players = new Array();
+var players = {};
 
 function onYouTubeIframeAPIReady() {
-  var temp = $("iframe[src^='https://www.youtube.com']");
-  for (var i = 0; i < temp.length; i++) {
-    players.push(new YT.Player(temp[i].id, {
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
-    }));
-  }
+    var temp = $("iframe[src^='https://www.youtube.com']");
+    for (var i = 0; i < temp.length; i++) {
+        var frameID = temp[i].id;
+        players[frameID] = new YT.Player(frameID, {
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
 }
 
 function onPlayerStateChange(event) {
-  var videoCarousel = $('#videoCarousel');
-  if (event.data == YT.PlayerState.PLAYING) {
-    videoCarousel.carousel('pause');
-  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-    videoCarousel.carousel('cycle');
-  }
+    var videoCarousel = $('#videoCarousel');
+    if (event.data == YT.PlayerState.PLAYING) {
+        videoCarousel.carousel('pause');
+    } else if (event.data == YT.PlayerState.ENDED) {
+        videoCarousel.carousel('cycle');
+    }
 }
 
 $(document).ready(function() {
-  $('#videoCarousel').carousel();
-});
-
-// Asynchronously load the YouTube IFrame API
-// After the API code downloads, it will call the function specified using the 'onload' parameter
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var players = new Array();
-
-function onYouTubeIframeAPIReady() {
-  var temp = $("iframe[src^='https://www.youtube.com']");
-  for (var i = 0; i < temp.length; i++) {
-    players.push(new YT.Player(temp[i].id, {
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
-    }));
-  }
-}
-
-function onPlayerStateChange(event) {
-  var videoCarousel = $('#videoCarousel');
-  if (event.data == YT.PlayerState.PLAYING) {
-    videoCarousel.carousel('pause');
-  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-    videoCarousel.carousel('cycle');
-  }
-}
-
-$(document).ready(function() {
-  $('#videoCarousel').carousel();
-});
-
-// Asynchronously load the YouTube IFrame API
-// After the API code downloads, it will call the function specified using the 'onload' parameter
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var players = new Array();
-
-function onYouTubeIframeAPIReady() {
-  var temp = $("iframe[src^='https://www.youtube.com']");
-  for (var i = 0; i < temp.length; i++) {
-    players.push(new YT.Player(temp[i].id, {
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
-    }));
-  }
-}
-
-function onPlayerStateChange(event) {
-  var videoCarousel = $('#videoCarousel');
-  if (event.data == YT.PlayerState.PLAYING) {
-    videoCarousel.carousel('pause');
-  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-    videoCarousel.carousel('cycle');
-  }
-}
-
-$(document).ready(function() {
-  $('#videoCarousel').carousel();
+    $('#videoCarousel').carousel();
 });
 
 // Asynchronously load the YouTube IFrame API
