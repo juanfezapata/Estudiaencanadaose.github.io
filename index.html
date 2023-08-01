@@ -172,34 +172,19 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
-var player;
+
+
+var players = new Array();
+
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('video1', {
-    events: {
-      'onStateChange': onPlayerStateChange
-    }
-  });
-  player = new YT.Player('video2', {
-    events: {
-      'onStateChange': onPlayerStateChange
-    }
-  });
-  player = new YT.Player('video3', {
-    events: {
-      'onStateChange': onPlayerStateChange
-    }
-  });
-  player = new YT.Player('video4', {
-    events: {
-      'onStateChange': onPlayerStateChange
-    }
-  });
-  player = new YT.Player('video5', {
-    events: {
-      'onStateChange': onPlayerStateChange
-    }
-  });
-  // Do this for all videos
+  var temp = $("iframe[src^='https://www.youtube.com']");
+  for (var i = 0; i < temp.length; i++) {
+    players.push(new YT.Player(temp[i].id, {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    }));
+  }
 }
 
 function onPlayerStateChange(event) {
@@ -211,13 +196,86 @@ function onPlayerStateChange(event) {
   }
 }
 
-$('#videoCarousel').carousel();
-</script>
+$(document).ready(function() {
+  $('#videoCarousel').carousel();
+});
+
+// Asynchronously load the YouTube IFrame API
+// After the API code downloads, it will call the function specified using the 'onload' parameter
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var players = new Array();
+
+function onYouTubeIframeAPIReady() {
+  var temp = $("iframe[src^='https://www.youtube.com']");
+  for (var i = 0; i < temp.length; i++) {
+    players.push(new YT.Player(temp[i].id, {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    }));
+  }
+}
+
+function onPlayerStateChange(event) {
+  var videoCarousel = $('#videoCarousel');
+  if (event.data == YT.PlayerState.PLAYING) {
+    videoCarousel.carousel('pause');
+  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+    videoCarousel.carousel('cycle');
+  }
+}
+
+$(document).ready(function() {
+  $('#videoCarousel').carousel();
+});
+
+// Asynchronously load the YouTube IFrame API
+// After the API code downloads, it will call the function specified using the 'onload' parameter
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var players = new Array();
+
+function onYouTubeIframeAPIReady() {
+  var temp = $("iframe[src^='https://www.youtube.com']");
+  for (var i = 0; i < temp.length; i++) {
+    players.push(new YT.Player(temp[i].id, {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    }));
+  }
+}
+
+function onPlayerStateChange(event) {
+  var videoCarousel = $('#videoCarousel');
+  if (event.data == YT.PlayerState.PLAYING) {
+    videoCarousel.carousel('pause');
+  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+    videoCarousel.carousel('cycle');
+  }
+}
+
+$(document).ready(function() {
+  $('#videoCarousel').carousel();
+});
+
+// Asynchronously load the YouTube IFrame API
+// After the API code downloads, it will call the function specified using the 'onload' parameter
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 
-<!--
-
+  <!--
 
               <div id="theCarousel" class="carousel slide" data-ride="carousel"> 
            
@@ -295,10 +353,7 @@ $('#videoCarousel').carousel();
                        <h4 class="name" style="color: #ADDEDA">Angie Velandia<br> <em style="color: #F17126">Chocontá, Colombia</em></h4>
                       <h2 class="position" style="color: #ADDEDA">Posgrado en salud, bienestar y fitness</h2>
                    </div>
--->  
 
-
-<!--
                    <div class="carousel-item"> 
                        <iframe width="280" height="315" src="https://www.youtube.com/embed/zAKfmbZqtbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                    </div>
@@ -307,7 +362,8 @@ $('#videoCarousel').carousel();
                        <iframe width="280" height="315" src="https://www.youtube.com/embed/zAKfmbZqtbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                
                    </div>
--->      
+-->     
+ 
           </div>
        </div><!-- end of row -->
    </div>
