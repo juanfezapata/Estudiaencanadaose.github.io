@@ -111,9 +111,7 @@
                <h6><div style="font-family: 'Spectral', serif;"> <span class="icon icon-envelope"> </span> orangeskyen@gmail.com </div> </h6>
 
           </div>
-
-
-          ...
+         
 <div class="col-md-12">
 <!-- Custom Button Style -->
 <style>
@@ -141,23 +139,14 @@
 
 <!-- Custom Button HTML -->
 <div class="button-container">
-    <button class="custom-button" id="custom-button">Agendar una cita</button>
+    <button class="custom-button" id="custom-button" onclick="openSchedulingPage()">Agendar una cita</button>
 </div>
 
-<!-- Google Calendar Appointment Scheduling Script -->
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<!-- Script to open the specified URL -->
 <script>
-(function() {
-    var target = document.getElementById('custom-button');
-    window.addEventListener('load', function() {
-        calendar.schedulingButton.load({
-            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0cnk5WknJhMpzNi3EpxK3UHnA6eCLp-MR-tEoBZogwC1wzyEJcgp12gbwSGn6OUUaqp_yaByzn?gv=true',
-            color: '#039BE5',
-            label: 'Agendar una cita',
-            target,
-        });
-    });
-})();
+    function openSchedulingPage() {
+        window.open('https://calendar.app.google/3KUQgwZBNBwefBHY8', '_blank');
+    }
 </script>
 
 
