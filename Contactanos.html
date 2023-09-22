@@ -115,50 +115,51 @@
 
           ...
 <div class="col-md-12">
-  <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<!-- Custom Button Style -->
 <style>
-    /* Custom style to make the label and the button bigger, centered, and stand out */
-    .calendar-scheduling-button-container {
-        text-align: center; /* Center the button container */
-        margin: 40px 0; /* Add some margin for spacing */
-    }
-
-    .calendar-scheduling-button {
-        font-size: 2em; /* Increase font size */
-        padding: 20px 40px; /* Increase button size */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow */
-        background-color: #FF5733; /* Change button color */
+    .custom-button {
+        font-size: 3em; /* Adjust font size */
+        padding: 30px 60px; /* Adjust padding */
+        background-color: #FF5733; /* Adjust background color */
+        color: #fff; /* Adjust text color */
         border: none;
-        border-radius: 5px; /* Rounded corners */
-        transition: all 0.3s ease; /* Smooth transition for hover effects */
-        display: inline-block; /* Make it inline for centering */
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block; /* Inline block for centering */
+        transition: background-color 0.3s ease;
     }
 
-    .calendar-scheduling-button:hover {
-        background-color: #FF6F47; /* Slightly lighter color on hover */
-        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
-        transform: translateY(-2px); /* Slight upward movement on hover */
+    .custom-button:hover {
+        background-color: #FF6F47; /* Adjust hover background color */
+    }
+
+    .button-container {
+        text-align: center; /* Center the button */
+        margin-top: 20px; /* Adjust margin */
     }
 </style>
+
+<!-- Custom Button HTML -->
+<div class="button-container">
+    <button class="custom-button" id="custom-button">Agendar una cita</button>
+</div>
+
+<!-- Google Calendar Appointment Scheduling Script -->
 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 <script>
 (function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0cnk5WknJhMpzNi3EpxK3UHnA6eCLp-MR-tEoBZogwC1wzyEJcgp12gbwSGn6OUUaqp_yaByzn?gv=true',
-      color: '#039BE5',
-      label: 'Agendar una cita', // Changed label to Spanish
-      target,
+    var target = document.getElementById('custom-button');
+    window.addEventListener('load', function() {
+        calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0cnk5WknJhMpzNi3EpxK3UHnA6eCLp-MR-tEoBZogwC1wzyEJcgp12gbwSGn6OUUaqp_yaByzn?gv=true',
+            color: '#039BE5',
+            label: 'Agendar una cita',
+            target,
+        });
     });
-  });
 })();
 </script>
-<!-- end Google Calendar Appointment Scheduling -->
 
-<!-- Place this where you want the button to appear -->
-<div class="calendar-scheduling-button-container"></div>
 
 </div>
 ...
