@@ -1,0 +1,16 @@
+{
+  "name": "estudiaencanadaose.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "form-submission-handler.js",
+  "scripts": {
+    "test": "htmlhint \"**/*.html\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
+}
