@@ -30,9 +30,12 @@
 					number2 = parseFloat(numberS[1].value);
 			
       if (number1 > number2) {
+        // keep both the numeric variables and inputs in sync
         var tmp = number1;
-        numberS[0].value = number2;
-        numberS[1].value = tmp;
+        number1 = number2;
+        number2 = tmp;
+        numberS[0].value = number1;
+        numberS[1].value = number2;
       }
 
       rangeS[0].value = number1;
